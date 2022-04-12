@@ -3,6 +3,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const questions = require('./src/questions');
+const generatePage = require('./src/page-template');
+const writeFile = require('./generate-site.js');
 
 
 const employees = [];
@@ -49,3 +51,4 @@ function internPrompt() {
 }
 
 managerPrompt()
+.then(writeFile(generatePage));
